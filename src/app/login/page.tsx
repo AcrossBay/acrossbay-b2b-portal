@@ -34,6 +34,7 @@ export default function LoginPage() {
 
   return (
     <main style={{ padding: "40px", maxWidth: "420px", margin: "0 auto" }}>
+      <img src="/acrossbay-logo.jpg" alt="AcrossBay Logo" style={{ display: "block", margin: "0 auto 20px auto", maxWidth: "200px" }} />
       <h1>Login B2B</h1>
 
       <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
