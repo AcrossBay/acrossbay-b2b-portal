@@ -40,24 +40,20 @@ export default function LoginPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
-        backgroundImage: "url(/acrossbay-logo.jpg)",
-        backgroundSize: "cover",
+        backgroundImage: "url('/acrossbay-logo.jpg')",
+        backgroundSize: "85%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
       <div
         style={{
-  minHeight: "100vh",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-start",
-  backgroundImage: "url('/acrossbay-logo.jpg')",
-  backgroundSize: "85%",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-}}
-
+          width: "300px",
+          marginLeft: "8%",
+          background: "rgba(255,255,255,0.9)",
+          padding: "24px",
+          borderRadius: "8px",
+        }}
       >
         <form
           onSubmit={onSubmit}
