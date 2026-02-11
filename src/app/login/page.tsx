@@ -1,3 +1,4 @@
+"use client";
 export default function LoginPage() {
   return (
     <main style={{ padding: "40px", maxWidth: "400px", margin: "0 auto" }}>
