@@ -7,51 +7,68 @@ export default function Home() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        padding: "40px",
-        backgroundColor: "#f8f9fa",
+        justifyContent: "space-between",
+        backgroundColor: "#f5f7f8",
       }}
     >
-      <Image
-        src="/acrossbay-logo.jpg"
-        alt="AcrossBay Logo"
-        width={180}
-        height={180}
-        priority
-      />
-
-      <h1 style={{ marginTop: "20px" }}>
-        AcrossBay B2B Portal
-      </h1>
-
-      <p style={{ maxWidth: "600px", marginTop: "15px" }}>
-        Private business platform dedicated to professional operators.
-        Access reserved to registered partners for order management,
-        documentation and commercial materials.
-      </p>
-
-      <div style={{ marginTop: "25px", fontSize: "14px", color: "#555" }}>
-        <p><strong>AcrossBay Pure & Co. Ltd</strong></p>
-        <p>Company No: 16873154</p>
-        <p>United Kingdom</p>
-        <p>Email: info@acrossbay.com</p>
-      </div>
-
-      <a
-        href="/login"
+      <div
         style={{
-          marginTop: "30px",
-          padding: "12px 24px",
-          backgroundColor: "black",
-          color: "white",
-          textDecoration: "none",
-          borderRadius: "6px",
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "40px",
         }}
       >
-        Area Clienti
-      </a>
+        <Image
+          src="/acrossbay-logo.jpg"
+          alt="AcrossBay Logo"
+          width={160}
+          height={160}
+          priority
+        />
+
+        <h1 style={{ marginTop: "20px" }}>
+          AcrossBay B2B Portal
+        </h1>
+
+        <p style={{ maxWidth: "600px", marginTop: "15px", color: "#555" }}>
+          Reserved business platform for professional partners.
+          Secure access to orders, documentation and commercial materials.
+        </p>
+
+        <a
+          href="/login"
+          style={{
+            marginTop: "30px",
+            padding: "12px 28px",
+            backgroundColor: "black",
+            color: "white",
+            textDecoration: "none",
+            borderRadius: "6px",
+            fontWeight: "500",
+          }}
+        >
+          Access Area
+        </a>
+      </div>
+
+      <footer
+        style={{
+          borderTop: "1px solid #e2e2e2",
+          padding: "20px",
+          textAlign: "center",
+          fontSize: "13px",
+          color: "#666",
+        }}
+      >
+        <p><strong>AcrossBay Pure & Co. Ltd</strong></p>
+        <p>Company No: 16873154 · United Kingdom</p>
+        <p>Email: info@acrossbay.com</p>
+        <p>© {new Date().getFullYear()} AcrossBay. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
