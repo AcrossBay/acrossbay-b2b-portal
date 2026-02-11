@@ -51,3 +51,61 @@ export default function LoginPage() {
           width: "280px",
           background: "rgba(255,255,255,0.92)",
           padding: "28px",
+          borderRadius: "10px",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+        }}
+      >
+        <form
+          onSubmit={onSubmit}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px",
+          }}
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={{
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "4px",
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "4px",
+            }}
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              padding: "10px",
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            {loading ? "..." : "Accedi"}
+          </button>
+
+          {err && <div style={{ color: "crimson" }}>{err}</div>}
+        </form>
+      </div>
+    </main>
+  );
+}
