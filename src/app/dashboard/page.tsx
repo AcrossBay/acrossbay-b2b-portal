@@ -4,7 +4,7 @@ import { CUSTOMERS } from "@/config/customers";
 import { getCookieName, verifySession } from "@/lib/abAuth";
 
 export default function DashboardPage() {
-  const token = (await cookies()).(get(getCookieName())?.value;
+  const token = cookies().get(getCookieName())?.value;
   if (!token) redirect("/login");
 
   const session = verifySession(token);
@@ -21,16 +21,15 @@ export default function DashboardPage() {
       <p>
         Cliente: <b>{cfg.name}</b> ({session.customerId})
       </p>
+
       <div style={{ padding: 12, border: "1px solid #ddd" }}>
-        <p style={{ marginTop: 0 }}><b>Note / Configurazione (placeholder)</b></p>
+        <p style={{ marginTop: 0 }}>
+          <b>Note / Configurazione (placeholder)</b>
+        </p>
         <p style={{ marginBottom: 0 }}>{cfg.notes}</p>
       </div>
 
-      <form
-        action="/api/auth/logout"
-        method="post"
-        style={{ marginTop: 16 }}
-      >
+      <form action="/api/auth/logout" method="post" style={{ marginTop: 16 }}>
         <button type="submit" style={{ padding: 10, cursor: "pointer" }}>
           Logout
         </button>
