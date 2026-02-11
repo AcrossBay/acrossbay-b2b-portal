@@ -33,9 +33,33 @@ export default function LoginPage() {
   }
 
   return (
-    <main style={{ minHeight: "100vh", padding: "40px", display: "flex", alignItems: "center", justifyContent: "flex-start", backgroundImage: "url(/acrossbay-logo.jpg)", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-      <div style={{ maxWidth: "420px", width: "100%", backgroundColor: "rgba(255,255,255,0.85)", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}>
-        <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+    <main
+      style={{
+        minHeight: "100vh",
+        padding: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        backgroundImage: "url(/acrossbay-logo.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "420px",
+          width: "100%",
+          backgroundColor: "rgba(255,255,255,0.85)",
+          padding: "24px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
+        }}
+      >
+        <form
+          onSubmit={onSubmit}
+          style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+        >
           <input
             type="email"
             placeholder="Email"
@@ -56,7 +80,13 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            style={{ padding: "10px", backgroundColor: "black", color: "white", border: "none", cursor: "pointer" }}
+            style={{
+              padding: "10px",
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+            }}
           >
             {loading ? "..." : "Accedi"}
           </button>
