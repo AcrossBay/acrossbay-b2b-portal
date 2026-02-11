@@ -36,28 +36,32 @@ export default function LoginPage() {
     <main
       style={{
         minHeight: "100vh",
-        padding: "40px",
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundImage: "url('/acrossbay-logo.jpg')",
-        backgroundSize: "85%",
+        backgroundSize: "80%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        paddingLeft: "6%",
       }}
     >
       <div
         style={{
-          width: "300px",
-          marginLeft: "8%",
-          background: "rgba(255,255,255,0.9)",
-          padding: "24px",
-          borderRadius: "8px",
+          width: "280px",
+          background: "rgba(255,255,255,0.92)",
+          padding: "28px",
+          borderRadius: "10px",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
         }}
       >
         <form
           onSubmit={onSubmit}
-          style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px",
+          }}
         >
           <input
             type="email"
@@ -65,7 +69,11 @@ export default function LoginPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{ padding: "10px" }}
+            style={{
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "4px",
+            }}
           />
           <input
             type="password"
@@ -73,7 +81,11 @@ export default function LoginPage() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={{ padding: "10px" }}
+            style={{
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "4px",
+            }}
           />
 
           <button
@@ -84,6 +96,7 @@ export default function LoginPage() {
               backgroundColor: "black",
               color: "white",
               border: "none",
+              borderRadius: "4px",
               cursor: "pointer",
             }}
           >
