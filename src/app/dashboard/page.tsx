@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { CUSTOMERS } from "@/config/customers";
+import { getCookieName, verifySession } from "@/lib/abAuth";
 
 function Card(props: { title: string; desc: string; status?: string }) {
   return (
@@ -21,11 +22,13 @@ function Card(props: { title: string; desc: string; status?: string }) {
 export default async function DashboardPage() {
   // Auth light: se manca cookie → fuori
   const cookieStore = await cookies();
-  const token = cookieStore.get("acrossbay_session")?.value;
+  const token = cookieStore.get(getCookieName())?.value;
   if (!token) redirect("/login");
 
-  // Placeholder customerId: oggi fisso, domani lo prendiamo dalla sessione/ENV/DB
-  const customerId = "ACROSS001";
+  const session = verifySession(token);
+  if (!session) redirect("/login");
+
+  const customerId = session.customerId;
   const customer = CUSTOMERS[customerId];
 
   return (
