@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { PRODUCTS } from "@/config/products";
-import { getCookieName } from "@/lib/abAuth";
+import { getCookieName, verifySession } from "@/lib/abAuth";
 
 type OrderItemInput = { productId: string; qty: number };
 
@@ -21,6 +21,11 @@ export async function POST(req: Request) {
   const cookieStore = await cookies();
   const token = cookieStore.get(getCookieName())?.value;
   if (!token) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+
+  const session = verifySession(token);
+  if (!session) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
@@ -70,6 +75,7 @@ export async function POST(req: Request) {
     orderNumber: generateOrderNumber(),
     status: "pending_activation",
     currency: "GBP",
+    customerId: session.customerId,
     subtotalGbp: subtotal,
     note,
     items: normalized,
