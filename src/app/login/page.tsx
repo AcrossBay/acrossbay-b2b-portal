@@ -48,13 +48,16 @@ export default function LoginPage() {
     >
       <div
         style={{
-          maxWidth: "420px",
-          width: "100%",
-          backgroundColor: "rgba(255,255,255,0.85)",
-          padding: "24px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
-        }}
+  minHeight: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  backgroundImage: "url('/acrossbay-logo.jpg')",
+  backgroundSize: "85%",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+}}
+
       >
         <form
           onSubmit={onSubmit}
