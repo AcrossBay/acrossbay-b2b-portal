@@ -4,7 +4,7 @@ import { CUSTOMERS } from "@/config/customers";
 import { getCookieName, verifySession } from "@/lib/abAuth";
 
 export default function DashboardPage() {
-  const token = cookies().get(getCookieName())?.value;
+  const token = (await cookies()).(get(getCookieName())?.value;
   if (!token) redirect("/login");
 
   const session = verifySession(token);
